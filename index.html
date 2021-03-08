@@ -1,0 +1,39 @@
+﻿<html>
+<title>彦彦鹏鹏相见倒计时</title> 
+<head>
+<link rel="stylesheet" href="./css/flipclock.css">
+<script src="./js/jquery.min.js"></script>
+<script src="./js/flipclock.js"></script>	
+</head>
+<body>
+<div class="wrapper">
+    <div id="web_bg" style="background-image: url(1.jpg);"></div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+<p align="center" style="font-size:45px;">距离彦彦和鹏鹏相见还有</p>	 
+<div id="clock">
+
+	<p class="date">
+		<div class="clock" style="margin:2em;"></div>
+	</p>
+</div>
+<script type="text/javascript">
+			var clock;
+			$(document).ready(function() {
+				var	year=2021,month=3,day=14;
+				// 获取当前的时间
+				var currentDate = new Date();
+				//var futureDate  = new Date(currentDate.getFullYear() + 1, 0, 1);
+				var futureDate = new Date(year, month-1, day, 9); 
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+					countdown: true
+				});
+			});
+</script>
+<iframe src="1.mp3" allow = "autoplay" hidden />
+</body>
+</html>
